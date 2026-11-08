@@ -1,0 +1,60 @@
+/* ─────────────────────────────────────────────────────────────
+   THEME: the look of the whole site lives here.
+   Change a value, save, refresh. Nothing else needs touching.
+   (Category tile colors are in content/site.js.)
+   ───────────────────────────────────────────────────────────── */
+:root {
+  /* Page background: a color, plus an optional image or pattern.
+     Example image:  --bg-image: url("../images/backgrounds/paper.jpg");  */
+  --bg: #EEF0F1;
+  --bg-image: none;
+
+  /* Text */
+  --ink: #101317;          /* main text */
+  --muted: #626A73;        /* captions, labels */
+  --line: #D3D8DD;         /* thin rules and borders */
+
+  /* Accent: links, hover states, the dot in the logo */
+  --accent: #1F3FD1;
+
+  /* Cards behind images (shows while images load) */
+  --card: #E1E5E8;
+
+  /* Full-screen image viewer */
+  --viewer-bg: #0E0E0E;
+  --viewer-ink: #EEF0F1;
+
+  /* Type. Fonts load from Google Fonts in index.html. */
+  --font-display: "Archivo", system-ui, sans-serif;
+  --display-width: 125;    /* 62 = condensed … 125 = extra wide */
+  --display-weight: 850;
+  --font-body: "Archivo", system-ui, sans-serif;
+
+  /* Shape */
+  --radius: 0px;           /* try 6px for softer corners */
+  --gap: 14px;             /* space between grid images */
+  --max: 1440px;           /* max page width */
+}
+
+/* Dark version: used automatically when the visitor's device is in dark mode.
+   Delete this whole block if you always want the light look. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1215;
+    --ink: #EEF0F1;
+    --muted: #8E98A2;
+    --line: #262C33;
+    --card: #1A1F24;
+    --accent: #7C93FF;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1215;
+  --ink: #EEF0F1;
+  --muted: #8E98A2;
+  --line: #262C33;
+  --card: #1A1F24;
+  --accent: #7C93FF;
+  color-scheme: dark;
+}
