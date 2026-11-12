@@ -23,7 +23,7 @@
   const varsFor = c => `--c:${c.color};--k:${c.ink}`;
 
   // Header + footer
-  document.getElementById("brand-mark").innerHTML = S.categories.map(c => `<i style="background:${c.color}"></i>`).join("");
+  document.getElementById("brand-mark").innerHTML = "<i></i><i></i><i></i><i></i>";
   document.getElementById("brand-name").textContent = S.name;
   document.getElementById("menu").innerHTML =
     S.categories.map(c => `<a href="#${c.id}" data-r="${c.id}" style="${varsFor(c)}">${esc(c.short || c.label)}</a>`).join("") +
@@ -72,11 +72,15 @@
           ${S.resume ? `<a class="btn" href="${esc(S.resume)}" target="_blank" rel="noopener">Résumé</a>` : ""}
         </div>
       </section>
-      <section class="wrap tiles" aria-label="Sections">
-        ${S.categories.map(c => `<a class="tile" href="#${c.id}" style="${varsFor(c)}">
-          <span class="ico" data-icon="${c.id}">${icon(c)}</span>
-          <span class="count">${counts[c.id]}</span>
-          <span><h2 class="display">${esc(c.label)}</h2><p>${esc(c.blurb)}</p></span>
+      <section class="wrap cats" aria-label="Sections">
+        ${S.categories.map(c => `<a class="cat-row" href="#${c.id}">
+          <div class="cat-text">
+            <span class="label">${counts[c.id]} projects</span>
+            <h2 class="display">${esc(c.label)}</h2>
+            <p>${esc(c.blurb)}</p>
+            <span class="go">View work →</span>
+          </div>
+          <div class="cat-img">${c.cover ? `<img src="${thumb(c.cover)}" alt="" loading="lazy" style="object-position:${esc(c.coverPosition || "center")}">` : ""}</div>
         </a>`).join("")}
       </section>
       <section class="wrap">

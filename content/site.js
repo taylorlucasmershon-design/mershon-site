@@ -19,18 +19,20 @@ window.SITE = {
   ],
 
   // The four sections. Order here = order in the menu.
-  //   color: the tile color on the home page (any CSS color)
-  //   ink:   text color on that tile
-  //   icon:  graphic for the section (SVG or PNG; swap in your own drawing)
+  //   color: the tile's background (flips to `ink` on hover)
+  //   ink:   the tile's outline, text and graphic color
+  //   icon:  graphic for the section page (SVG or PNG; swap in your own drawing)
+  //   cover: the example image shown for this section on the home page
+  //          (any image name from content/works.js, e.g. "ink-series-1")
   categories: [
-    { id: "illustration", label: "Illustration", color: "#E8452C", ink: "#FFF6EE", icon: "assets/icons/illustration.svg",
+    { id: "illustration", cover: "pitts-lettering-1", label: "Illustration", color: "#FFFFFF", ink: "#000000", icon: "assets/icons/illustration.svg",
       blurb: "Aviation art, portraits, ink and paint." },
-    { id: "design", label: "Graphic Design", short: "Design", color: "#1F3FD1", ink: "#F2F4FF", icon: "assets/icons/design.svg",
+    { id: "design", cover: "timber-tiger-1", label: "Graphic Design", short: "Design", color: "#FFFFFF", ink: "#000000", icon: "assets/icons/design.svg",
       blurb: "Identity, campaigns, apparel, packaging.",
       filters: ["Branding", "Advertising", "Apparel", "Packaging", "Digital", "Type", "Layout"] },
-    { id: "editorial", label: "Editorial", color: "#F4B400", ink: "#1A1400", icon: "assets/icons/editorial.svg",
+    { id: "editorial", cover: "spread-aj-wilder-1", label: "Editorial", color: "#FFFFFF", ink: "#000000", icon: "assets/icons/editorial.svg",
       blurb: "Editing and designing Sport Aerobatics, the IAC's magazine." },
-    { id: "books", label: "Picture Books", short: "Books", color: "#14936B", ink: "#EFFFF8", icon: "assets/icons/books.svg",
+    { id: "books", cover: "weird-farm-1", label: "Picture Books", short: "Books", color: "#FFFFFF", ink: "#000000", icon: "assets/icons/books.svg",
       blurb: "Six children's books, written and illustrated." }
   ],
 
